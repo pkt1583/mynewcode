@@ -7,11 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by pankaj on 09-12-2015.
- */
 public final class Node {
     private final String nodeName;
+
+    private int nodePosition;
 
     private LinkedList<Node> parentNodes = new LinkedList<Node>();
 
@@ -38,7 +37,6 @@ public final class Node {
                 if (parentNode != null) {
                     Node parent=NodeFactory.INSTANCE.getNode(parentNode);
                     this.parentNodes.add(parent);
-                    parent.childNodes.add(this);
                 }
             }
         }
@@ -120,6 +118,14 @@ public final class Node {
 
     public void setAllPathsFromThisNode(Map<PathKey, Path> allPathsFromThisNode) {
         this.allPathsFromThisNode = allPathsFromThisNode;
+    }
+
+    public int getNodePosition() {
+        return nodePosition;
+    }
+
+    public void setNodePosition(int nodePosition) {
+        this.nodePosition = nodePosition;
     }
 
     /*public boolean isParent(Node parentOfWhat){

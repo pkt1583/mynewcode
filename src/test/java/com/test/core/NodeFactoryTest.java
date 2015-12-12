@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -46,7 +47,14 @@ public class NodeFactoryTest {
 
     @Test
     public void testParent()throws Exception{
-        System.out.println(GNode.getAllParents());
+
+        LinkedList<Node> dnodes= (LinkedList<Node>) DNode.getAllParents();
+
+        System.out.println("****************************************");
+
+        LinkedList<Node> fnodes= (LinkedList<Node>) FNode.getAllParents();
+
+
     }
 
     @Test
